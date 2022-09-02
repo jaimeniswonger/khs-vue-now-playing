@@ -7,11 +7,9 @@ import { computed } from "vue";
 import { NOW_PLAYING } from "../graphql-operations";
 const nowPlayingQuery = useQuery(NOW_PLAYING);
 
-console.log(nowPlayingQuery.result);
 const movies = computed<Movie[]>(
   () => nowPlayingQuery.result?.value?.nowPlaying ?? []
 );
-console.log(movies);
 </script>
 
 <template>
